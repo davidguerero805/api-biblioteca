@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ApiBibliotecaApplication",
+            "request": "launch",
+            "mainClass": "com.biblioteca.ApiBibliotecaApplication",
+            "projectName": "api-biblioteca"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiBibliotecaApplication<api-biblioteca>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.biblioteca.api_biblioteca.ApiBibliotecaApplication",
+            "projectName": "api-biblioteca",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
