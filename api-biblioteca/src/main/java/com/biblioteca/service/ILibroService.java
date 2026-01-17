@@ -6,5 +6,6 @@ import java.util.List;
 public interface ILibroService {
     List<Libro> obtenerTodos();
     Libro guardar(Libro libro);
+    Libro actualizar(Long id, Libro libroDetalles);
     void eliminar(Long id);
 }

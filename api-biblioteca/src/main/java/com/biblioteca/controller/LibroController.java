@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/libros")
+@CrossOrigin(origins = "*")// Permite la conexion con el frontend
 public class LibroController {
 
     @Autowired
@@ -23,6 +24,11 @@ public class LibroController {
     public Libro crear(@RequestBody Libro libro) {
         return libroService.guardar(libro);
     }
+
+    @PutMapping("/{id}")
+    public Libro actualizarLibro(@PathVariable Long id, @RequestBody Libro libroDetalles) {
+        return libroService.actualizar(id, libroDetalles); // Asegúrate de tener este método en tu Service
+}
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Long id) {
