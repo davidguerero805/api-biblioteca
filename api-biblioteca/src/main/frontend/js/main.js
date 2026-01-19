@@ -17,12 +17,14 @@ async function refrescarTabla() {
                 <td><strong>${libro.titulo}</strong></td>
                 <td>${libro.autor}</td>
                 <td><code>${libro.isbn}</code></td>
+                <td><code>${libro.editorial}</code></td>
                 <td class="text-center">
-                    <button class="btn btn-warning btn-sm btn-editar" 
+                    <but class="btn btn-warning btn-sm btn-editar" 
                         data-id="${libro.id}" 
                         data-titulo="${libro.titulo}" 
                         data-autor="${libro.autor}" 
-                        data-isbn="${libro.isbn}">Editar</button>
+                        data-isbn="${libro.isbn}"
+                        data-editorial="${libro.editorial}">Editar</button>
                     <button class="btn btn-outline-danger btn-sm btn-eliminar" data-id="${libro.id}">Eliminar</button>
                 </td>
             </tr>`;
@@ -41,6 +43,7 @@ async function refrescarTabla() {
             document.getElementById('titulo').value = d.titulo;
             document.getElementById('autor').value = d.autor;
             document.getElementById('isbn').value = d.isbn;
+            document.getElementById('editorial').value = d.editorial;
 
             editandoId = d.id; // Activamos modo edición
             btnGuardar.textContent = "Actualizar";
@@ -54,7 +57,8 @@ formulario.onsubmit = async (e) => {
     const datos = {
         titulo: document.getElementById('titulo').value,
         autor: document.getElementById('autor').value,
-        isbn: document.getElementById('isbn').value
+        isbn: document.getElementById('isbn').value,
+        editorial: document.getElementById('editorial').value
     };
 
     if (editandoId) {

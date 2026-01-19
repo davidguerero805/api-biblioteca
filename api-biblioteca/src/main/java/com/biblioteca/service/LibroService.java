@@ -37,6 +37,7 @@ public class LibroService implements ILibroService {
             libro.setTitulo(libroDetalles.getTitulo());
             libro.setAutor(libroDetalles.getAutor());
             libro.setIsbn(libroDetalles.getIsbn());
+            libro.setEditorial(libroDetalles.getEditorial());
             return libroRepository.save(libro);
         }).orElseThrow(() -> new RuntimeException("No se encontró el libro con ID: " + id));
     }
